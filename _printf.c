@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			if (*format == '\0')
 				return (-1);
 
-			if (*format == '%')
+			else if (*format == '%')
 				write(1, format, 1);
 
 			else if (*format == 'c')
@@ -46,17 +46,17 @@ int _printf(const char *format, ...)
 				while (ptr[i])
 					i++;
 				write(1, ptr, i);
+				j += i - 1;
 			}
-			j += i - 1;
 
 			else if (*format == 'i')
 			{
-				write(*format);
+				_write(*format);
 			}
 
 			else if (*format == 'd')
 			{
-				write(*format);
+				_write(*format);
 			}
 		}
 		format++;
