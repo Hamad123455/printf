@@ -5,7 +5,6 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-void reverse(char str[], int length);
-char* citoa(int num, char* str, int base);
+void write(int value);
 
 #endif

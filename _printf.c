@@ -28,8 +28,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			/*if (*format == '\0')
-				return (-1);*/
+			if (*format == '\0')
+				return (-1);
 
 			if (*format == '%')
 				write(1, format, 1);
@@ -48,10 +48,34 @@ int _printf(const char *format, ...)
 				write(1, ptr, i);
 			}
 			j += i - 1;
+
+			else if (*format == 'i')
+			{
+				write(*format);
+			}
+
+			else if (*format == 'd')
+			{
+				write(*format);
+			}
 		}
 		format++;
 	}
 	return (j);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
