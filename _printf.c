@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			/*if (*format == '\0')
 				return (-1);*/
 
-			else if (*format == '%')
+			if (*format == '%')
 				write(1, format, 1);
 
 			else if (*format == 'c')
