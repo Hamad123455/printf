@@ -28,8 +28,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			if (*format != 'c' || *format != 's')
-				return (-1);
+			/*if (*format == '\0')
+				return (-1);*/
 
 			else if (*format == '%')
 				write(1, format, 1);
