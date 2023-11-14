@@ -28,17 +28,18 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			if (format == '\0')
+			if (*format == '\0')
 				return (-1);
 
 			else if (*format == '%')
-				write(1, *format, 1);
+				write(1, format, 1);
 
 			else if (*format == 'c')
 			{
-				ch = (char)va_arg(args, char);
+				ch = (char)va_arg(args, int);
 				write(1, &ch, 1);
 			}
+
 			else if (*format == 's')
 			{
 				ptr = va_arg(args, char *);
