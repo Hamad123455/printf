@@ -49,14 +49,10 @@ int _printf(const char *format, ...)
 				j += i - 2;
 			}
 
-			else if (*format == 'i')
+			else if (*format == 'i' || *format == 'd')
 			{
-				_write(*format);
-			}
-
-			else if (*format == 'd')
-			{
-				_write(*format);
+				int k = va_arg(args, int);
+				_write(k);
 			}
 		}
 		format++;
