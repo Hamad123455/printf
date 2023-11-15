@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 				while (ptr[i])
 					i++;
 				write(1, ptr, i);
-				j += i - 2;
+				j += i - 1;
 			}
 
 			else if (*format == 'i' || *format == 'd')
