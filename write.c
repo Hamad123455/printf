@@ -1,32 +1,32 @@
 #include "main.h"
 
-int _write(int value) {
-    char buffer[20];
-    int length = 0;
+int _write(int v) {
+    char b[20];
+    int l = 0;
     int i, j, k = 0;
 
-    if (value < 0)
+    if (v < 0)
     {
-	    value = -value;
+	    v = -v;
 	    k = 1;
     }
     
     do {
-        buffer[length++] = '0' + value % 10;
-        value /= 10;
-    } while (value != 0);
+        b[l++] = '0' + v % 10;
+        v /= 10;
+    } while (v != 0);
 
     if (k == 1)
     {
-	    buffer[length++] = '-';
+	    b[l++] = '-';
     }
 
-    for (i = 0, j = length - 1; i < j; i++, j--) {
-        char temp = buffer[i];
-        buffer[i] = buffer[j];
-        buffer[j] = temp;
+    for (i = 0, j = l - 1; i < j; i++, j--) {
+        char temp = b[i];
+        b[i] = b[j];
+        b[j] = temp;
     }
 
-    write(1, buffer, length);
-    return (length);
+    write(1, b, l);
+    return (l);
 }
