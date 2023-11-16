@@ -16,7 +16,10 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	if (*format == '\0')
-		printf("(null)");
+	{
+		ptr = "(null)";
+		write(1, ptr, 6);
+	}
 
 	while (*format)
 	{

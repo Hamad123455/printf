@@ -4,6 +4,6 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-void _write(int value);
+int _write(int value);
 
 #endif
