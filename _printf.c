@@ -46,13 +46,19 @@ int _printf(const char *format, ...)
 				while (ptr[i])
 					i++;
 				write(1, ptr, i);
-				j += i - 1;
+				j += i;
 			}
 
 			else if (*format == 'i' || *format == 'd')
 			{
 				int k = va_arg(args, int);
-				_write(k);
+				int len = _write(k);
+				j += len - 1;
+			}
+			
+			else
+			{
+				write(1, format, 1);
 			}
 		}
 		format++;

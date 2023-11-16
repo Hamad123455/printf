@@ -1,6 +1,6 @@
 #include "main.h"
 
-void _write(int value) {
+int _write(int value) {
     char buffer[20];
     int length = 0;
     int i, j, k = 0;
@@ -28,4 +28,5 @@ void _write(int value) {
     }
 
     write(1, buffer, length);
+    return (length);
 }
