@@ -17,8 +17,7 @@ int _printf(const char *format, ...)
 
 	if (*format == '\0')
 	{
-		char *null = "(null)";
-		write(1, null, 6);
+		return (-1);
 	}
 
 	while (*format)
@@ -46,10 +45,18 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				ptr = va_arg(args, char *);
+				if (*ptr == '\0')
+				{
+					ptr = "(null)";
+					write(1, ptr, 7);
+				}
+				else
+				{
 				while (ptr[i])
 					i++;
 				write(1, ptr, i);
 				j += i;
+				}
 			}
 
 			else if (*format == 'i' || *format == 'd')
