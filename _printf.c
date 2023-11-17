@@ -17,8 +17,7 @@ int _printf(const char *format, ...)
 
 	if (*format == '\0')
 	{
-		ptr = "(null)";
-		write(1, ptr, 6);
+		return (-1);
 	}
 
 	while (*format)
